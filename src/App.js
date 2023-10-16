@@ -6,6 +6,7 @@ import Items from "./compjnents/Items.jsx";
 
 /* создаем масив с товарами*/
 export default function App() {
+  const [orders, setOders]= useState([]);/* добавление товаров в корзину(масив)*/
   const[items,setItems]=useState ([ 
     {
       id:1,
@@ -88,14 +89,22 @@ export default function App() {
       price:'300'
     }
 
-  ]);
+  ])
+
+  const addToOrder=(item3)=>{
+    if(!orders.some((el)=>el.id===item3.id)){
+      setOders([...orders,item3]);
+    }
+  };
   
   return (
     <div className="wrapper">
-    <Header/>
-    <Items allItems={items}/>
+    <Header orders={orders}/>
+    <Items allItems={items} onAdd={addToOrder}/>
     <Footer/>
     
     </div>
   );
+
+    
 }
