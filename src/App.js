@@ -14,7 +14,7 @@ export default function App() {
       img:'1.png',
       desc:'Galaxy S23 FE унаследовал впечатляющий дизайн серии Galaxy S23, переняв его премиальную эстетику и многие свойства практичного характера. Выберите любой из четырёх оттенков — мятный, графит, бежевый и фиолетовый. Каждый из них гармонично сочетается с металлической рамкой, обрамляющей корпус..',
       category:'Samsung',
-      price:'1000'
+      price:'1000.56'
     },
     {
       id:2,
@@ -97,9 +97,13 @@ export default function App() {
     }
   };
   
+  const deleteOrder =(id)=>{
+    setOders(orders.filter((el)=>el.id !==id));
+  }
+
   return (
     <div className="wrapper">
-    <Header orders={orders}/>
+    <Header orders={orders} onDelete={deleteOrder}/>
     <Items allItems={items} onAdd={addToOrder}/>
     <Footer/>
     
