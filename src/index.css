@@ -147,6 +147,27 @@ header .presentation::before{
   font-weight: 500;
   color: rgb(238, 133, 12);
 }
+
+.categories div{
+  display: inline-block;
+  background: #f0f0f0;
+  border-radius:10px;
+  padding: 10px 10px;
+  font-weight: 700;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  font-size:20px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 500ms ease;
+}
+.categories div:hover{
+  transform: scale(1.1) ;
+  border-color: aqua;
+  color: chocolate;
+}
+
+
 main{
   display: flex;
   width: 100%;
@@ -167,6 +188,7 @@ main .item img{
   width: 100%;
   border-radius: 10px 10px 0 0 ;
   transition: transform 500ms ease;/* плавность смещения (для transform: scale(1.05); */
+  cursor: pointer;
 }
 main .item img:hover{
   transform: scale(1.05);
