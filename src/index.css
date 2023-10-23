@@ -167,6 +167,27 @@ header .presentation::before{
   color: chocolate;
 }
 
+.full-item{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(0,0,0.8);
+  z-index: 9999;
+  overflow: auto;
+}
+.full-item > div{
+  width: 600px;
+  position: relative;
+  margin: 10% auto;
+  padding: 40px 30px;
+  background: blanchedalmond;
+  border-radius: 5px;
+}
+.full-item > div > img{
+  width: 600px;
+}
 
 main{
   display: flex;
@@ -184,27 +205,31 @@ main .item{
   position: relative;
  
 }
-main .item img{
+main .item img,
+.full-item .item img{
   width: 100%;
   border-radius: 10px 10px 0 0 ;
   transition: transform 500ms ease;/* плавность смещения (для transform: scale(1.05); */
   cursor: pointer;
 }
-main .item img:hover{
+main .item img:hover,
+.full-item .item img:hover{
   transform: scale(1.05);
 }
-main h2,
-main p,
-main b{
+main h2, .full-item .h2
+main p, .fulli-tem .p
+main b, .fulli-tem .b{
   margin: 10px 20px;
   color: #05386b;
   padding-bottom: 30px;
 }
-main b{
+main b,
+.full-item .b{
   color: crimson;
   
 }
-main .add-to-cart{
+main .add-to-cart,
+.full-item .add-to-cart{
   position: absolute;
   bottom: 10px;
   right: 20px;
@@ -219,7 +244,8 @@ main .add-to-cart{
   font-weight: 700;
   transition: transform 500ms ease;/* плавность смещения (для transform: scale(1.05); */
 }
-main .add-to-cart:hover{
+main .add-to-cart:hover,
+.full-item .add-to-cart:hover{
   transform: scale(1.05) translateY(-5px);/* смещение кнопки по оси y */
 }
 
